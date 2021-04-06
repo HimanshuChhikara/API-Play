@@ -21,9 +21,9 @@
     <h1>Where is the ISS ?</h1>
 
     <p>
-            latitude : <span id="lat"></span><br>
-            longitude : <span id="long"></span><br>
-            velocity : <span id="velo"></span>
+            latitude: <span id="lat"></span>°<br />
+            longitude: <span id="lon"></span>° <br />
+            Velocity: <span id="velocity"></span>m/s<br>
 
     </p> 
     <div id="issMap"></div>
@@ -51,18 +51,25 @@
       async function getISS() {
         const response = await fetch(api_url);
         const data = await response.json();
-        const { latitude, longitude } = data;
+        console.log(data)
+        // console.log(data.velocity)
+        const { latitude, longitude ,velocity} = data;
 
+        if(firstTime){
         // Always set the view to current lat lon and zoom!
         mymap.setView([latitude, longitude], mymap.getZoom());
         marker.setLatLng([latitude, longitude]);
+        firstTime = false
+        }
 
         document.getElementById('lat').textContent = latitude.toFixed(2);
         document.getElementById('lon').textContent = longitude.toFixed(2);
+        document.getElementById('velocity').textContent = velocity.toFixed(2);
       }
 
       getISS();
 
+      setInterval(getISS,1000)
     
     </script>
 </body>
