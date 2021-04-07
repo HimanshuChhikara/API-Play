@@ -1,0 +1,24 @@
+{
+  "name": "selfie-app",
+  "version": "1.0.0",
+  "description": "A selfie Application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HimanshuChhikara/API-Play.git"
+  },
+  "author": "Himanshu Chhikara",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/HimanshuChhikara/API-Play/issues"
+  },
+  "homepage": "https://github.com/HimanshuChhikara/API-Play#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nedb": "^1.8.0",
+    "nodemon": "^2.0.7"
+  }
+}
