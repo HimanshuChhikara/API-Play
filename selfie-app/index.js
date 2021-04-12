@@ -16,3 +16,16 @@ app.post('/api', (request, response) => {
   database.insert(data);
   response.json(data);
 });
+
+app.get('/getData',async (req,res) =>{
+  const data = database.find({},(err,data) =>{
+    if(err){
+      res.end()
+    }else{
+      res.json(data);
+      console.log(data)
+    }
+  });
+  
+
+})
